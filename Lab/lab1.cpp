@@ -9,7 +9,7 @@ int main () {
     cout << "MENU CHUONG TRINH" << endl;
     cout << "1. Tinh dien tich hinh thang" << endl;
     cout << "2. Tinh so tien lam viec" << endl;
-    cout << "3. Tinh diem trung binh" << endl;
+    cout << "3. Tinh diem trung binh cua hoc sinh" << endl;
     cout << "4. Tinh so chia va so bi chia" << endl;
     cout << "5. Chuyen so phut nhap thanh gio phut giay" << endl;
     cout << "6. Thoat chuong trinh" << endl;
@@ -48,7 +48,31 @@ int main () {
         system("pause");
         break;
     case 3:
-        cout << "3" << endl;
+        {
+        cout << "--------------------------------------\n";
+        cout << "Tinh diem trung binh cua hoc sinh\n";
+        cout << "--------------------------------------\n";
+        char khoiThi;
+        string hoVaTen;
+        float toan , van;
+        cout << "Nhap khoi thi cua ban : "; cin >> khoiThi;
+        cout << "Nhap ho va ten cua ban : "; cin.ignore();
+        getline( cin , hoVaTen );
+        cout << "Nhap diem toan : "; cin >> toan;
+        cout << "Nhap diem van : "; cin >> van;
+        int diemTrungBinh = ( toan + van ) / 2; // bien tinh diem trung binh
+        cout << "--------- Thong Bao Ket Qua ----------" << endl;
+        cout << "Thi sinh: " << hoVaTen << endl;
+        cout << "Khoi thi: " << khoiThi << endl;
+        cout << "Diem trung binh cac mon: " << diemTrungBinh << endl;
+        // kiem tra dieu kien tinh diem trung binh
+        if ( diemTrungBinh >= 5 ) {
+            cout << "Ket qua: Dau" << endl;
+        } else {
+            cout << "Ket qua: Rot" << endl;
+        }
+        }
+        system("pause");
         break;
     case 4:
         cout << "4" << endl;
