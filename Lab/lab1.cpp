@@ -42,7 +42,7 @@ int main () {
         float mucLuong = 8.5;
         cout << "Nhap thoi gian lam viec cua ban: "; cin >> thoiGian;
         cout << "Muc luong hien tai cua ban la: " << mucLuong << endl;
-        float luong = thoiGian * mucLuong;
+        float luong = thoiGian * mucLuong; // bien tinh luong
         cout << "Hom nay ban da lam duoc " << thoiGian << " gio va so luong ban nhan duoc la " << luong << " $ "<< endl;
         }
         system("pause");
@@ -75,7 +75,18 @@ int main () {
         system("pause");
         break;
     case 4:
-        cout << "4" << endl;
+        {
+        cout << "--------------------------------------\n";
+        cout << "Tinh so chia va so bi chia\n";
+        cout << "--------------------------------------\n";
+        int a , b;
+        cout << "Nhap so bi chia: "; cin >> a;
+        cout << "Nhap so chia: "; cin >> b;
+        cout << "--------------------------------------" << endl;
+        int chiaLayDu = a % b; // bien a chia b lay du
+        cout << a << " chia " << b << " = " << a / b << " du " << chiaLayDu << endl;
+        }
+        system("pause");
         break;
     case 5:
         cout << "5" << endl;
