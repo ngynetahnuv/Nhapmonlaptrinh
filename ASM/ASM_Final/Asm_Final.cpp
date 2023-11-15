@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// bien tinh so nguyen to
+// tinh so nguyen to
 bool soNguyenTo(int x) {
   if ( x < 2 ) {
     return false;
@@ -16,7 +16,7 @@ bool soNguyenTo(int x) {
   return true;
 }
 
-//bien tinh so chinh phuong
+// tinh so chinh phuong
 bool soChinhPhuong( int x ) {
   if ( x < 0 ){
     return false;
