@@ -82,6 +82,7 @@ int main () {
             } else {
                 cout << x << " khong la so chinh phuong\n\n" << endl;
             }
+            system("pause");
             break;
         case 2:
             cout << "--------------------------------------\n";
@@ -94,6 +95,7 @@ int main () {
             cout << "Uoc chung lon nhat cua " << a << " va " << b << " la " << ucln( a , b ) << endl;
             cout << "Boi chung nho nhat cua " << a << " va " << b << " la " << bcnn( a , b ) << endl;
             cout << endl;
+            system("pause");
             break;
         case 4:
         cout << "--------------------------------------\n";
@@ -128,6 +130,8 @@ int main () {
             }
           }
         }
+        system("pause");
+        break;
         default:
             cout << "Thoat chuong trinh....";
             break;

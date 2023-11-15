@@ -31,9 +31,21 @@ int main () {
         cout << "--------------------------------------\n";
         cout << "Dien tich hinh thang la = " << dienTich << endl;
     }
+        system("pause");
         break;
     case 2:
-        cout << "2" << endl;
+        {
+        cout << "--------------------------------------\n";
+        cout << "Tinh so tien lam viec\n";
+        cout << "--------------------------------------\n";
+        float thoiGian;
+        float mucLuong = 8.5;
+        cout << "Nhap thoi gian lam viec cua ban: "; cin >> thoiGian;
+        cout << "Muc luong hien tai cua ban la: " << mucLuong << endl;
+        float luong = thoiGian * mucLuong;
+        cout << "Hom nay ban da lam duoc " << thoiGian << " gio va so luong ban nhan duoc la " << luong << " $ "<< endl;
+        }
+        system("pause");
         break;
     case 3:
         cout << "3" << endl;
