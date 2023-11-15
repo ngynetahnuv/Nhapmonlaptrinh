@@ -90,10 +90,7 @@ int main () {
             int a , b;
             cout << "Nhap gia tri a = "; cin >> a;
             cout << "Nhap gia tri b = "; cin >> b;
-
-            // int ucln_re = ucln( a , b ); // gan bien ucln cho bien ucln_re
-            // int bcnn_re = bcnn( a , b ); // gan bien bcnn_re cho bien bcnn_re
-
+          
             cout << "Uoc chung lon nhat cua " << a << " va " << b << " la " << ucln( a , b ) << endl;
             cout << "Boi chung nho nhat cua " << a << " va " << b << " la " << bcnn( a , b ) << endl;
             cout << endl;
