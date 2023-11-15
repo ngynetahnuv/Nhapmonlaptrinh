@@ -89,7 +89,21 @@ int main () {
         system("pause");
         break;
     case 5:
-        cout << "5" << endl;
+        {
+        cout << "--------------------------------------\n";
+        cout << "Chuyen so phut nhap thanh gio phut giay\n";
+        cout << "--------------------------------------\n";
+        int soGiay;
+        cout << "Nhap so giay: "; cin >> soGiay;
+
+        int gio = soGiay / 3600; // so gio trong so giay
+        int phut = ( soGiay % 3600 ) / 60; // chia so gio trong so giay va lay phan du tinh phut
+        int giay = soGiay % 60; // so giay con lai sau khi tinh phut
+        
+        cout << "--------------------------------------" << endl;
+        cout << soGiay << "s doi thanh " << gio << "h " << phut << "p " << giay << "s" << endl;
+        }
+        system("pause");
         break;
     default:
         cout << "Thoat chuong trinh" << endl;
@@ -98,6 +112,5 @@ int main () {
 
     } while ( chonChuongTrinh != 6 );
     
-
     return 0;
 }
