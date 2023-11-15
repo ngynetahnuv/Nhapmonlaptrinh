@@ -61,6 +61,7 @@ int main () {
         switch (luachon)
         {
         case 1:
+        {
             cout << "--------------------------------------\n";
             cout << "Kiem tra so nguyen\n";
             cout << "--------------------------------------\n";
@@ -82,9 +83,11 @@ int main () {
             } else {
                 cout << x << " khong la so chinh phuong\n\n" << endl;
             }
+        }
             system("pause");
             break;
         case 2:
+        {
             cout << "--------------------------------------\n";
             cout << "Tim uoc boi chung" << endl;
             cout << "--------------------------------------\n";
@@ -95,9 +98,11 @@ int main () {
             cout << "Uoc chung lon nhat cua " << a << " va " << b << " la " << ucln( a , b ) << endl;
             cout << "Boi chung nho nhat cua " << a << " va " << b << " la " << bcnn( a , b ) << endl;
             cout << endl;
+        }
             system("pause");
             break;
         case 4:
+        {
         cout << "--------------------------------------\n";
         cout << "Tinh tien dien" << endl;
         cout << "--------------------------------------\n";
@@ -130,8 +135,9 @@ int main () {
             }
           }
         }
-        system("pause");
-        break;
+        }
+              system("pause");
+              break;
         default:
             cout << "Thoat chuong trinh....";
             break;
