@@ -1,27 +1,35 @@
 #include <iostream>
 #include <math.h>
+#include <stdlib>
 
 using namespace std;
 
 // tinh so nguyen to
 bool soNguyenTo(int x) {
+  // neu x nho hon 2 thi tra ve false
   if ( x < 2 ) {
     return false;
   }
+  // tao mot vong lap cho i = 2, va binh phuong cua i nho hon hoac bang x
   for ( int i = 2; i * i <= x; i++ ) {
+    // neu x chia co du cho i = 0 thi tra ve false
     if ( x % i == 0 ) {
       return false;
     }
   }
+  // neu tren kia xog thi tra ve true
   return true;
 }
 
 // tinh so chinh phuong
 bool soChinhPhuong( int x ) {
+  // neu x nho hon 0 thi tra ve false
   if ( x < 0 ){
     return false;
   } 
+  // cho bien sqrt_x = can bac 2 cua x
   int sqrt_x = sqrt(x);
+  // tra ve binh phuong cua can bac 2 cua x = x
   return( sqrt_x * sqrt_x == x );
 }
 
@@ -94,7 +102,7 @@ int main () {
             int a , b;
             cout << "Nhap gia tri a = "; cin >> a;
             cout << "Nhap gia tri b = "; cin >> b;
-          
+          // in ra uoc boi 
             cout << "Uoc chung lon nhat cua " << a << " va " << b << " la " << ucln( a , b ) << endl;
             cout << "Boi chung nho nhat cua " << a << " va " << b << " la " << bcnn( a , b ) << endl;
             cout << endl;
@@ -178,25 +186,28 @@ int main () {
             float diem;
             string hovaTen;
             cout << "Nhap ho va ten cua sinh vien : ";
-            cin.ignore();
+            cin.ignore(); // them cai nay neu co cin
             getline( cin , hovaTen );
             cout << "Nhap diem : "; cin >> diem;
             cout << "-------- Thong tin sinh vien --------" << endl;
             cout << "Ten cua sinh vien : " <<  hovaTen << endl;
             cout << "Diem cua sinh vien : " << diem << endl;
-            
+            // neu diem lon hon hoac bang 9.0 thi in ra xuat sac
             if ( diem >= 9.0 ) {
                 cout << "Hoc luc : xuat sac" << endl;
             } else {
+              // neu diem lon hon hoac bang 8.0 thi in ra gioi
                 if ( diem >= 8.0 ) { 
                     cout << "Hoc luc : gioi" << endl;
                 } else {
+                  // neu diem lon hon hoac bang 6.5 thi in ra kha
                     if ( diem >= 6.5 ) {
                         cout << "Hoc luc : kha" << endl;
                     } else {
+                      // neu diem lon hon hoac bang 5.0 thi in ra trung binh
                         if ( diem >= 5.0 ) {
                             cout << "Hoc luc : trung binh" << endl;
-                        } else {
+                        } else { // con neu duoi 5.0 thi in ra yeu
                             cout << "Hoc luc : yeu" << endl;
                         }
                     }
