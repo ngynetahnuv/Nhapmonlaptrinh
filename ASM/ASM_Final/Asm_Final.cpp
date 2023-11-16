@@ -2,6 +2,8 @@
 #include <math.h>
 #include <stdlib>
 
+// xog bai 1, 2, 3, 4, 8, 9
+
 using namespace std;
 
 // tinh so nguyen to
