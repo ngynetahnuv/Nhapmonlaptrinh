@@ -2,7 +2,7 @@
 #include <math.h>
 #include <cstdlib>
 
-// xog bai 1, 2, 3, 4, 8, 9, 10
+// xog bai 1, 2, 3, 4, 5, 8, 9, 10
 
 using namespace std;
 
@@ -178,8 +178,32 @@ int main () {
           }
         }
         }
-              system("pause");
-              break;
+        system("pause");
+        break;
+        case 5:
+        {
+          cout << "--------------------------------------\n";
+          cout << "Doi tien " << endl;
+          cout << "--------------------------------------\n";
+          // khai bao mang luu cac menh gia tien
+        int menhGia[] = { 500, 200, 100, 50, 20, 10, 5, 2, 1 }; // co 9 menh gia tien
+        int soTien, soToTien;
+        cout << "Vui long nhap vao so tien can doi: "; cin >> soTien;
+
+        // vong lap tung men gia tien
+        for ( int i = 0; i < 9; i++ ) {
+            // tinh so to tien
+            soToTien = soTien / menhGia[i];
+            // neu so to tien khong bang 0 thi in ra so tien do 
+            if ( soToTien != 0 ) {
+                cout << "Co " << soToTien << " to " << menhGia[i] << endl;
+            }
+            // cap nhat so tien con lai
+            soTien = soTien - soToTien * menhGia[i];
+        }
+        }
+        system("pause");
+        break;
         case 8:
         {
             cout << "--------------------------------------\n";
