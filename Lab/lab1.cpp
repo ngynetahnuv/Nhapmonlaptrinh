@@ -109,8 +109,6 @@ int main () {
         cout << "Thoat chuong trinh" << endl;
         break;
     }
-
     } while ( chonChuongTrinh != 6 );
-    
     return 0;
 }

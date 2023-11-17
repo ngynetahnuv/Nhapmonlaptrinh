@@ -2,7 +2,7 @@
 #include <math.h>
 #include <cstdlib>
 
-// xog bai 1, 2, 3, 4, 8, 9
+// xog bai 1, 2, 3, 4, 8, 9, 10
 
 using namespace std;
 
