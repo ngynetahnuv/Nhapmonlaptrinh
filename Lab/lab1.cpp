@@ -60,7 +60,7 @@ int main () {
         getline( cin , hoVaTen );
         cout << "Nhap diem toan : "; cin >> toan;
         cout << "Nhap diem van : "; cin >> van;
-        int diemTrungBinh = ( toan + van ) / 2; // bien tinh diem trung binh
+        float diemTrungBinh = ( toan + van ) / 2; // bien tinh diem trung binh
         cout << "--------- Thong Bao Ket Qua ----------" << endl;
         cout << "Thi sinh: " << hoVaTen << endl;
         cout << "Khoi thi: " << khoiThi << endl;

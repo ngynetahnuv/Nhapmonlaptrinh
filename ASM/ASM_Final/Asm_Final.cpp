@@ -6,6 +6,14 @@
 
 using namespace std;
 
+void cn1() {
+
+}
+
+void cn2() {
+
+}
+
 // tinh so nguyen to
 bool soNguyenTo(int x) {
   // neu x nho hon 2 thi tra ve false
