@@ -1,5 +1,8 @@
 #include <iostream>
 #include <unistd.h>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 //prototype
@@ -29,16 +32,172 @@ bool kiemTra() {
 }
 
 // khai bao ham
+
 void cn1() {
     bool tiepTuc = true;
     do
     {
-        // code
+        int soNguyen;
+        cout << "Nhap mot so nguyen duong: "; cin >> soNguyen;
+        // kiem tra so chan le
+        if ( soNguyen % 2 == 0 ) {
+            cout << "So " << soNguyen << " la so chan" << endl;
+        } else {
+            cout << "So " << soNguyen << " la so le" << endl;
+        }
+        // kiem tra so nguyen to
+        int dem = 0;
+        for ( int i = 2; i <= sqrt(soNguyen); i++ ) {
+            if( soNguyen % i == 0 ) {
+                dem++;
+            }
+        }
+        if ( dem == 0 ) {
+            cout << "So " << soNguyen << " la so nguyen to " << endl;
+        } else {
+            cout << "So " << soNguyen << " khong phai la so nguyen to" << endl;
+        }
+        // kiem tra so chinh phuong
+        for ( int i = 0; i <= soNguyen; i++ ){
+            if ( i * i == soNguyen ) {
+                cout << "So" << soNguyen << " la so chinh phuong" << endl;
+            } else {
+                cout << "So " << soNguyen << " khong phai la so chinh phuong" << endl;
+            }
+            return;
+        }
     tiepTuc = kiemTra();
     } while ( tiepTuc == true );
 }
 
 void cn2() {
+    bool tiepTuc = true;
+    do
+    {
+        float soKm;
+        float soTien;
+        cout << "Nhap so km da chay: "; cin >> soKm;
+        if ( soKm < 0 ) 
+        {
+            cout << "So km ban da nhap khong hop le" << endl;
+        }
+        else if ( soKm > 0 || soKm <= 2 ) 
+        {
+            soTien = soKm * 10;
+        }
+        else if ( soKm <= 9 ) 
+        {
+            soTien = soKm * 15;
+        }
+        else if ( soKm <= 19 )
+        {
+            soTien = soKm * 20;
+        } 
+        else if ( soKm >= 20 )
+        {
+            soTien = soKm * 25;
+        }
+        cout << "So tien ban can phai thanh toan la: " << soTien << endl;
+        
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn3() {
+    bool tiepTuc = true;
+    do
+    {
+        cout << "Chuong trinh dang trong qua trinh xay dung" << endl;
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn4() {
+    bool tiepTuc = true;
+    do
+    {
+        cout << "Chuong trinh dang trong qua trinh xay dung" << endl;
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn5() {
+    bool tiepTuc = true;
+    do
+    {
+        string hoTen;
+        string soDienThoai;
+        int soLuongAo;
+        float tienGiamGia;
+        float giaBanLe = 12;
+        cout << "Nhap ho va ten: ";
+        getline(cin,hoTen);
+        cin.ignore();
+        cout << "Nhap so dien thoai: "; 
+        getline(cin,soDienThoai);
+        cin.ignore();
+        cout << "Nhap so luong ao: ";
+        cin.ignore();
+        cin >> soLuongAo;
+        float soTienTamTinh = soLuongAo * giaBanLe;
+        // kiem tra dieu kien
+        if ( soLuongAo >= 5 && soLuongAo <= 10 ) {
+            tienGiamGia = soTienTamTinh * 0.01;
+        } else if ( soLuongAo >= 11 && soLuongAo <= 20 ) {
+            tienGiamGia = soTienTamTinh * 0.15;
+        } else if ( soLuongAo >= 21 && soLuongAo <= 30 ) {
+            tienGiamGia = soTienTamTinh * 0.2;
+        } else {
+            tienGiamGia = soTienTamTinh * 0.25;
+        }
+        float soTienTong = soTienTamTinh - tienGiamGia;
+        string aoThun = "Ao thun";
+        // xuat ket qua
+        cout << "\tHOA DON BAN LE" << endl;
+        cout << "Khach hang: " << hoTen << endl;
+        cout << "So dien thoai: " << soDienThoai << endl;
+        cout << endl;
+        cout << "Ten hang: " << aoThun << endl;
+        cout << "So luong: " << soLuongAo << endl;
+        cout << "Gia ban le: $" << giaBanLe << endl;
+        cout << "Gia tam tinh: $" << soTienTamTinh << endl;
+        cout << "Giam gia: $" << tienGiamGia << endl;
+        cout << "Tong cong: $" << soTienTong << endl;
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn6() {
+    bool tiepTuc = true;
+    do
+    {
+        // mini game go bom
+        int so;
+        string moTa = "Hay nhap mot so bat ky tu 1 den 5 de go bom, neu nhap dung thi se tat con khong thi se no";
+        cout << "MINI game GO BOOM" << endl;
+        cout << "Mo ta: " << moTa << endl;
+        cout << "Hay nhap mot so ( 1 den 5 ): "; cin >> so;
+        // tao random so
+        srand(time(NULL));
+        int ngauNhien = rand() % ( 5 - 1 + 1 ) - 1;
+        if ( so == ngauNhien ) {
+            cout << "Chuc mung ban da go thanh cong boom!!!" << endl;
+        } else {
+            int n = 10;
+            while ( n >= 0 )
+            {
+                system("cls");
+                cout << "Thoi gian con lai la: " << n << endl;
+                sleep(1);
+                n--;
+            }
+            cout << "BOOOM da no !!!" << endl;
+        }
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn7() {
     bool tiepTuc = true;
     do
     {
@@ -51,8 +210,8 @@ void inMenu () {
     cout << "Menu chuc nang" << endl;
     cout << "1. Kiem tra tinh chat cua mot so nguyen" << endl;
     cout << "2. Tinh tien taxi" << endl;
-    cout << "3. Tinh lai suat vay ngan hang"<< endl;
-    cout << "4. Chuong trinh kiem tra so chia het cho 4" << endl;
+    cout << "3. Tinh lai suat vay ngan hang (chua hoan thien)"<< endl;
+    cout << "4. Chuong trinh kiem tra so chia het cho 4 (chua hoan thien)" << endl;
     cout << "5. Tinh hoa do ban quan ao" << endl;
     cout << "6. Mini game" << endl;
     cout << "7. Chuc nang chia tien cua zalo" << endl;
@@ -63,6 +222,7 @@ void inMenu () {
 }
 int main () {
     int menu;
+    do {
     inMenu();
     cout << "Chon chuong trinh(1-10): "; cin >> menu;
     switch (menu)
@@ -70,11 +230,24 @@ int main () {
     case 1:
         cn1();
         break;
+    case 2:
+        cn2();
+        break;
+    case 3:
+        cn3();
+        break;
+    case 4:
+        cn4();
+        break;
+    case 5:
+        cn5();
+        break;
     case 11:
         break;
     
     default:
         break;
     }
+    } while ( menu != 11 );
     return 0; 
 }
