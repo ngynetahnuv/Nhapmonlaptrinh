@@ -65,8 +65,8 @@ void cn5() {
     float giaNha, mucLuong;
     float tienTietKiem = 0;
     int soNam = 0;
-    cout << "Nhap gia nha du kien: "; cin >> giaNha;
-    cout << "Nhap muc luong cua ban: "; cin >> mucLuong;
+    cout << "Nhap gia nha du kien: $"; cin >> giaNha;
+    cout << "Nhap muc luong cua ban: $"; cin >> mucLuong;
     // vong lap
     while (tienTietKiem < giaNha)
     {
