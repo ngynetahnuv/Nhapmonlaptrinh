@@ -2,6 +2,14 @@
 #include <unistd.h>
 using namespace std;
 
+// prototype
+void cn1();
+void cn2();
+void cn3();
+void cn4();
+void cn5();
+
+// cac ham chuc nang
 void cn1(){
     int n;
     cout << "Nhap mot so nguyen duong n: "; cin >> n;
@@ -26,7 +34,7 @@ void cn2() {
     cout << "Ket qua la = " << tong << endl;
 }
 
-void cn3() { // phải nghiên cứu thêm một chút
+void cn3() { 
     int n;
     cout << "Nhap mot so nguyen duong n: "; cin >> n;
     int tong = 0;

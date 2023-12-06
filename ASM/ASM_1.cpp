@@ -74,31 +74,23 @@ void cn2() {
     bool tiepTuc = true;
     do
     {
-        float soKm;
-        float soTien;
-        cout << "Nhap so km da chay: "; cin >> soKm;
-        if ( soKm < 0 ) 
-        {
-            cout << "So km ban da nhap khong hop le" << endl;
-        }
-        else if ( soKm > 0 || soKm <= 2 ) 
-        {
-            soTien = soKm * 10;
-        }
-        else if ( soKm <= 9 ) 
-        {
-            soTien = soKm * 15;
-        }
-        else if ( soKm <= 19 )
-        {
-            soTien = soKm * 20;
-        } 
-        else if ( soKm >= 20 )
-        {
-            soTien = soKm * 25;
-        }
-        cout << "So tien ban can phai thanh toan la: " << soTien << endl;
-        
+    float soKm;
+    cout << "Nhap so km da chay: "; cin >> soKm;
+    float tien = 0;
+    // kiem tra dieu kien
+    if ( soKm <= 2 ){
+        tien = soKm * 10;
+    } 
+    else if ( soKm <= 9 ){
+        tien = 2 * 10 + ( soKm - 2 ) * 15;
+    }
+    else if ( soKm <= 19 ){
+        tien = 2 * 10 + 7 * 15 + ( soKm - 9 ) * 20;
+    }
+    else {
+        tien = 2 * 10 + 7 * 15 + 10 * 20  + ( soKm - 19 ) * 25;
+    }
+    cout << "So tien can thanh toan la: $" << tien << endl;
     tiepTuc = kiemTra();
     } while ( tiepTuc == true );
 }
@@ -131,13 +123,12 @@ void cn5() {
         float tienGiamGia;
         float giaBanLe = 12;
         cout << "Nhap ho va ten: ";
+        cin.ignore();
         getline(cin,hoTen);
-        cin.ignore();
         cout << "Nhap so dien thoai: "; 
+        cin.ignore();
         getline(cin,soDienThoai);
-        cin.ignore();
         cout << "Nhap so luong ao: ";
-        cin.ignore();
         cin >> soLuongAo;
         float soTienTamTinh = soLuongAo * giaBanLe;
         // kiem tra dieu kien
@@ -241,6 +232,9 @@ int main () {
         break;
     case 5:
         cn5();
+        break;
+    case 6:
+        cn6();
         break;
     case 11:
         break;
