@@ -20,7 +20,7 @@ void cn1(){
         tong += i;
         tbc = (float)tong / n;
     }
-    cout << "Trung binh cong tu 1 den " << n << " la " << tbc << endl;
+    cout << "=> Trung binh cong tu 1 den " << n << " la " << tbc << endl;
 }
 
 void cn2() {
@@ -31,7 +31,7 @@ void cn2() {
     for ( int i = 1; i <= n; i++ ){
         tong += i * i * i;
     }
-    cout << "Ket qua la = " << tong << endl;
+    cout << "=> Ket qua la = " << tong << endl;
 }
 
 void cn3() { 
@@ -39,14 +39,14 @@ void cn3() {
     cout << "Nhap mot so nguyen duong n: "; cin >> n;
     int tong = 0;
     // vong lap
-    cout << "Cac uoc la: ";
+    cout << "=> Cac uoc la: ";
     for ( int i = 1; i <= n; i++ ){
         if ( n % i == 0 ) {
             cout << i << " ";
             tong += i;
         }
     }
-    cout << "\nTong cua cac uoc la: " << tong << endl;
+    cout << "\n=> Tong cua cac uoc la: " << tong << endl;
 }
 
 void cn4() {
@@ -73,7 +73,7 @@ void cn5() {
         tienTietKiem += mucLuong;
         soNam++;
     }
-    cout << "Ban can lam viec " << soNam << " nam de du tien mua nha" << endl;
+    cout << "=> Ban can lam viec " << soNam << " nam de du tien mua nha" << endl;
 }
 
 int main () {
@@ -113,6 +113,6 @@ int main () {
     default:
         break;
     }
-        } while( menu != 6 );
+    } while( menu != 6 );
     return 0;  
 }
