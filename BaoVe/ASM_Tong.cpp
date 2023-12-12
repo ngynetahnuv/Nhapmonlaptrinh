@@ -5,15 +5,24 @@
 #include <ctime>
 #include <iomanip>
 using namespace std;
-
+/*
+    bài xây dụng được 7 chức năng
+    tất cả chức năng xây dựng bới Nguyen Thanh Vu - PK03665
+*/
 //prototype
 bool kiemTra();
+void timKiemKhachHangCn10( int maCanTimCn10 );
+void xuatThongTinCn10();
 void cn1(); // xog
 void cn2(); // xog
 void cn5(); // xog: sửa thêm một chút phần xuất kết quả
 void cn6(); // xog
 void cn7(); // xog
+void cn8(); // xog
+void cn10(); // xog
 void inMenu();
+
+//khai bao hang chuc nang 10
 
 // ham kiem tra nguoi dung 
 bool kiemTra() {
@@ -27,8 +36,58 @@ bool kiemTra() {
     }
 }
 
-// khai bao ham
 
+
+// khai bao bien chuc nang 8
+int monAnCn8[6] = {1,2,3,4,5,6};
+string tenMonAnCn8[6] = {"Cafe chon","Cafe Brazil","Nuoc Pepsi","Nuoc Cam","Nuoc Coca","Nuoc Loc"};
+int giaMonAnCn8[6] = {2000,5000,500,300,500,50};
+int donHangCn8[6] = {0};
+// chuc nang 8
+
+
+// chuc nang 10 
+// khai bao hang
+const int soLuongKhachToiDaCn10 = 10000; 
+// khai bao bien du lieu
+int maKHCn10[soLuongKhachToiDaCn10];
+string tenKHCn10[soLuongKhachToiDaCn10];
+string soDTCn10[soLuongKhachToiDaCn10];
+int soDonHangCn10[soLuongKhachToiDaCn10];
+// bien dem so luong khach hang
+int tongLuongKhacHangCn10 = 0;
+
+// tim kiem khach hang
+void timKiemKhachHangCn10( int maCanTimCn10 ){
+    // vong lap kiem tra
+    for ( int i = 0; i < tongLuongKhacHangCn10; i++ ){
+        if ( maCanTimCn10 == maKHCn10[i] ){
+            cout << "\tThong tin khach hang" << endl;
+            cout << "Ma khach hang :" << maKHCn10[i] << endl;
+            cout << "Ten khach hang :" << tenKHCn10[i] << endl;
+            cout << "So dien thoai :" << soDTCn10[i] << endl;
+            cout << "So luong don hang da mua :" << soDonHangCn10[i] << endl;
+            return;
+        }
+    }
+    cout << "Khong co du lieu ma ban can tim" << endl;
+}
+
+// xuat thong tin khach hang
+void xuatThongTinCn10(){
+    for( int i = 0; i < tongLuongKhacHangCn10; i++ ){
+        cout << "\tThong tin khach hang" << endl;
+        cout << "Ma khach hang :" << maKHCn10[i] << endl;
+        cout << "Ten khach hang :" << tenKHCn10[i] << endl;
+        cout << "So dien thoai :" << soDTCn10[i] << endl;
+        cout << "So luong don hang da mua :" << soDonHangCn10[i] << endl;
+}
+}
+// chuc nang 10
+
+
+
+// khai bao ham
 void cn1() {
     bool tiepTuc = true;
     do
@@ -119,11 +178,14 @@ void cn5() {
         // kiem tra dieu kien
         if ( soLuongAo >= 5 && soLuongAo <= 10 ) {
             tienGiamGia = soTienTamTinh * 0.01;
-        } else if ( soLuongAo >= 11 && soLuongAo <= 20 ) {
+        } 
+        else if ( soLuongAo >= 11 && soLuongAo <= 20 ) {
             tienGiamGia = soTienTamTinh * 0.15;
-        } else if ( soLuongAo >= 21 && soLuongAo <= 30 ) {
+        } 
+        else if ( soLuongAo >= 21 && soLuongAo <= 30 ) {
             tienGiamGia = soTienTamTinh * 0.2;
-        } else {
+        } 
+        else {
             tienGiamGia = soTienTamTinh * 0.25;
         }
         float soTienTong = soTienTamTinh - tienGiamGia;
@@ -177,44 +239,148 @@ void cn7() {
     bool tiepTuc = true;
     do
     {
-        int n;
-        cout << "Nhap so luong thanh vien: "; cin >> n;
-        string ten[n];
-        // nhap ten thanh vien
-        for ( int i = 0; i < n; i++ ) {
-            cout << "Nhap ten thanh vien thu " << i + 1 << ": ";
+    // khai bao kieu du lieu
+    int soLuongThanhVien;
+    float tongSotien;
+    // nhap du lieu
+    cout << "Nhap so luong thanh vien: "; cin >> soLuongThanhVien;
+    cout << "Nhap so tien: $"; cin >> tongSotien;
+
+    // tao mang de dung vong lap luu ten va phan tram can chia
+    string tenThanhVien[soLuongThanhVien];
+    float phanTram[soLuongThanhVien];
+
+    for ( int i = 0; i < soLuongThanhVien; i++ ){
+        cout << "Nhap ten thanh vien thu " << i + 1 << " : ";
+        cin.ignore();
+        getline(cin,tenThanhVien[i]);
+    }
+
+    // xuat menu de chon chia deu hay chia phan tram
+    int chon;
+    cout << "Chon cach chia tien" << endl;
+    cout << "1. Chia deu" << endl;
+    cout << "2. Chia theo phan tram" << endl;
+    cout << "Vui long nhap lua chon: "; cin >> chon;
+    // chia deu
+    if ( chon == 1 )
+    {
+        cout << "\thia deu" << endl;
+        for ( int i = 0; i < soLuongThanhVien; i++ ){
+            cout << "Thanh vien " << tenThanhVien[i] << " can tra : $" << tongSotien / soLuongThanhVien << endl;
+        }
+    }
+    // chia theo phan tram
+    else if ( chon == 2 )
+    {
+        cout << "\tChia theo phan tram" << endl;
+        // vong lap de nhap phan tram cho tung thanh vien
+        float tongPhanTram = 0;
+        for ( int i = 0; i < soLuongThanhVien; i++ ){
+            cout << "Nhap phan tram cho thanh vien " << i + 1 << " : ";
+            cin >> phanTram[i];
+            tongPhanTram += phanTram[i];
+        }
+        // kiem tra xem tong phan tram nhap vao co bang 100% khong
+        if ( tongPhanTram != 100 ){
+            cout << "Tong phan tram ban nhap vao khong du 100 %" << endl;
+        }
+        // vong lap chia so tien 
+        for ( int i = 0; i < soLuongThanhVien; i++ ){
+            cout << "So tien ma " << tenThanhVien[i] << " can tra la: $" << ( phanTram[i] / 100 ) * tongSotien << endl;
+        }
+    }
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn8() {
+    bool tiepTuc = true;
+    do
+    {
+    // xuat menu mon an
+    cout << "\tMenu Mon An" << endl;
+    cout << setw(5) << "STT" << setw(20) << "Ten Mon" << setw(15) << "Gia tien" << endl;
+    for ( int i = 0; i < 5; i++ ){
+        cout << setw(5) << monAnCn8[i] << setw(20) << tenMonAnCn8[i] << setw(10) << "$" << giaMonAnCn8[i] << endl;
+    }
+    int chonCn8;
+    while ( chonCn8 != 0 )
+    {
+    cout << "Vui long nhap mon an (nhap 0 de thanh toan) :"; cin >> chonCn8;
+    if ( chonCn8 > 0 && chonCn8 <= 6 ) {
+        donHangCn8[ chonCn8 - 1 ]++;
+        cout << "Da them " << tenMonAnCn8[ chonCn8 - 1 ] << " vao don hang" << endl;
+    }
+    else if ( chonCn8 != 0 ){
+        cout << "Don hang khong hop le" << endl;
+    }
+    }
+    float tongTien = 0;
+    cout << "\tHoa don ban hang" << endl;
+
+    for ( int i = 0; i < 6; i++ ){
+        if ( donHangCn8[i] > 0 ){
+            tongTien += donHangCn8[i] * giaMonAnCn8[i];
+        }
+    }
+    float thue = tongTien * 0.07;
+    cout << "Tong cong (chua bao gom thue): $" << tongTien << endl;
+    cout << "Thue 7%: $" << thue << endl;
+    cout << "Tong cong (bao gom thue): $" << tongTien + thue << endl;
+    tiepTuc = kiemTra();
+    } while ( tiepTuc == true );
+}
+
+void cn10() {
+    bool tiepTuc = true;
+    do
+    {
+    int chonCn10;
+    do
+    {
+    cout << "\tQuan ly khach hang" << endl;
+    cout << "1. Nhap va luu tru thong tin khach hang" << endl;
+    cout << "2. Tim kiem thong tin khach hang" << endl;
+    cout << "3. Xuat danh sach khach hang" << endl;
+    cout << "Xin vui long chon chuc nang :"; cin >> chonCn10;
+    // kiem tra chuc nang
+    if ( chonCn10 == 1 ){
+        if ( tongLuongKhacHangCn10 < soLuongKhachToiDaCn10 ){
+            // nhap ma khach hang
+            cout << "Nhap ma khach hang: ";
+            cin >> maKHCn10[tongLuongKhacHangCn10];
             cin.ignore();
-            getline(cin,ten[i]);
+            // nhap ten khach hang
+            cout << "Nhap ten khach hang :";
+            getline(cin,tenKHCn10[tongLuongKhacHangCn10]);
+            // nhap so dien thoai
+            cout << "Nhap so dien thoai :";
+            cin.ignore();
+            getline(cin,soDTCn10[tongLuongKhacHangCn10]);
+            // nhap so don hang cua khach
+            cout << "Nhap so don hang :";
+            cin >> soDonHangCn10[tongLuongKhacHangCn10];
+            // dem so luong khach hang
+            tongLuongKhacHangCn10++;
+            cout << "Khach hang da duoc them" << endl;
+        } 
+        else {
+            cout << "So luong khach hang da day, khong the them " << endl;
         }
-        float tienCanChia;
-        cout << "Nhap so tien can chia: "; 
-        cin >> tienCanChia;
-        int chon;
-        cout << " " << endl;
-        cout << "1. Chia tien dong deu" << endl;
-        cout << "2. Chia tien theo phan tram" << endl;
-        cout << "Vui long lua chon: "; cin >> chon;
-        if ( chon == 1 ){
-        float soTien;
-        // xuat ket qua
-        for ( int i = 0; i < n; i++ ) {
-            // lap chia tien cho tung nguoi
-            soTien = tienCanChia / n;
-            cout << "Thanh vien " << ten[i] << " can tra: $" << soTien << endl;
-        }
-        } else if ( chon == 2 ) {
-            float phanTram[n];
-            // vong lap
-            for ( int i = 0; i < n; i++ ) {
-                cout << "Nhap phan tram cua nguoi thu " << ten[i] << " : ";
-                cin >> phanTram[i];
-            }
-            float tienMoiNguoi = 0;
-            for ( int i = 0; i < n; i++ ) {
-                tienMoiNguoi += phanTram[i] / 100 * tienCanChia;
-            }
-            cout << "Moi nguoi can tra: $" << tienMoiNguoi << endl;
-        }
+    } 
+    else if ( chonCn10 == 2 ){
+        int maCanTimCn10;
+        cout << "Nhap ma khach hang can tim :";
+        cin >> maCanTimCn10;
+        // goi ham
+        timKiemKhachHangCn10(maCanTimCn10);
+        
+    } 
+    else if ( chonCn10 == 3 ){
+        xuatThongTinCn10();
+    }
+    } while ( chonCn10 != 4 );
     tiepTuc = kiemTra();
     } while ( tiepTuc == true );
 }
@@ -241,19 +407,32 @@ int main () {
     switch (menu)
     {
     case 1:
+        system("cls");
         cn1();
         break;
     case 2:
+        system("cls");
         cn2();
         break;
     case 5:
+        system("cls");
         cn5();
         break;
     case 6:
+        system("cls");
         cn6();
         break;
     case 7:
+        system("cls");
         cn7();
+        break;
+    case 8:
+        system("cls");
+        cn8();
+        break;
+    case 10:
+        system("cls");
+        cn10();
         break;
     case 11:
         break;

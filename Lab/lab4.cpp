@@ -3,6 +3,11 @@
 #include <string>
 using namespace std;
 
+//prototype
+void danhSachSach();
+void timThongTinSach( string timMaSach);
+void suaGia(string timMaSach, int giaMoi);
+
 // khai bao hang
 const int SIZE = 4;
 
